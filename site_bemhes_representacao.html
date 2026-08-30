@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bemhes Representação | Soluções Industriais</title>
+<meta name="description" content="Bemhes Representação — soluções e produtos para indústria, manutenção e operações. Atendimento em Mandaguari e região.">
+<style>
+:root{
+  --azul:#073278;
+  --verde:#73b31c;
+  --verde2:#529e08;
+  --cinza:#666a7b;
+  --claro:#f3f4f4;
+  --branco:#fff;
+  --escuro:#172033;
+  --sombra:0 12px 35px rgba(7,50,120,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--escuro);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1150px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #e9ebef}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--azul);font-size:22px}
+.logo-box{width:48px;height:48px;border-radius:10px;background:var(--azul);display:grid;place-items:center;color:white;font-size:11px;text-align:center}
+nav{display:flex;gap:24px;font-weight:600;color:#30394b}
+nav a:hover{color:var(--verde2)}
+.btn{display:inline-block;padding:13px 22px;border-radius:9px;font-weight:700;transition:.2s}
+.btn-primary{background:var(--verde);color:white}
+.btn-primary:hover{background:var(--verde2);transform:translateY(-2px)}
+.btn-outline{border:2px solid var(--azul);color:var(--azul)}
+.btn-outline:hover{background:var(--azul);color:white}
+.hero{background:linear-gradient(135deg,#f3f4f4 0%,#fff 55%,#edf5e6 100%);padding:95px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.tag{display:inline-block;background:#e7f2d8;color:var(--verde2);font-weight:800;padding:7px 13px;border-radius:30px;margin-bottom:18px}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.05;color:var(--azul);margin-bottom:20px}
+.hero p{font-size:19px;color:var(--cinza);max-width:650px;margin-bottom:28px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:white;border-radius:24px;padding:35px;box-shadow:var(--sombra);border:1px solid #edf0f5}
+.logo-large{height:180px;border:2px dashed #c8ced9;border-radius:18px;display:grid;place-items:center;color:var(--cinza);text-align:center;padding:20px}
+.logo-large strong{display:block;color:var(--azul);font-size:24px;margin-bottom:8px}
+section{padding:80px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 45px}
+.section-head h2{font-size:38px;color:var(--azul);margin-bottom:10px}
+.section-head p{color:var(--cinza)}
+.products{background:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #e8ebf0;border-radius:18px;padding:28px;box-shadow:0 8px 25px rgba(20,30,50,.05);transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sombra)}
+.icon{width:50px;height:50px;border-radius:12px;background:#edf5e5;color:var(--verde2);display:grid;place-items:center;font-weight:900;font-size:20px;margin-bottom:18px}
+.card h3{color:var(--azul);margin-bottom:8px;font-size:21px}
+.card p{color:var(--cinza);font-size:15px}
+.highlight{background:var(--azul);color:#fff}
+.highlight .section-head h2,.highlight .section-head p{color:#fff}
+.highlight .section-head p{opacity:.8}
+.diesel{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.diesel-box{padding:35px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.diesel h3{font-size:30px;margin-bottom:12px}
+.diesel p{opacity:.86;margin-bottom:20px}
+.list{list-style:none;display:grid;gap:10px}
+.list li:before{content:"✓";color:#9ddd40;font-weight:900;margin-right:10px}
+.about{background:var(--claro)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.mission{background:#fff;border-left:5px solid var(--verde);padding:28px;border-radius:14px;box-shadow:var(--sombra)}
+.mission h3{color:var(--azul);font-size:25px;margin-bottom:8px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{padding:30px;border-radius:18px;background:var(--claro)}
+.contact-card h3{color:var(--azul);margin-bottom:10px}
+.contact-link{color:var(--azul);font-weight:700;word-break:break-word}
+.map{width:100%;height:320px;border:0;border-radius:18px;box-shadow:var(--sombra)}
+footer{background:#0b1f46;color:#fff;padding:30px 0}
+.footer-flex{display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer small{opacity:.75}
+.whatsapp{position:fixed;right:22px;bottom:22px;z-index:30;background:#25d366;color:white;padding:15px 19px;border-radius:50px;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.2)}
+@media(max-width:850px){
+  nav{display:none}
+  .hero-grid,.diesel,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .hero{padding:65px 0}
+  .footer-flex{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#inicio">
+      <div class="logo-box">SUA<br>LOGO</div>
+      <span>Bemhes Representação</span>
+    </a>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#missao">Missão</a>
+      <a href="#contato">Contato</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <a class="btn btn-primary" href="https://wa.me/5543988428240?text=Olá!%20Gostaria%20de%20conhecer%20os%20produtos%20da%20Bemhes%20Representação." target="_blank">Fale conosco</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">Soluções para sua empresa</span>
+      <h1>Produtos que ajudam sua operação a render mais.</h1>
+      <p>Conheça nosso portfólio de soluções para manutenção, lubrificação e desempenho industrial. Atendimento próximo, orientação técnica e foco nas necessidades de cada cliente.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#produtos">Conhecer produtos</a>
+        <a class="btn btn-outline" href="https://wa.me/5543988428240?text=Olá!%20Quero%20receber%20informações%20sobre%20os%20produtos." target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="logo-large">
+        <div>
+          <strong>BEMHES REPRESENTAÇÃO</strong>
+          <span>Coloque sua logomarca aqui</span>
+          <p style="font-size:13px;margin-top:8px">Substitua este espaço pela imagem oficial da sua marca.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="produtos">
+  <div class="container">
+    <div class="section-head">
+      <h2>Nossos produtos</h2>
+      <p>Uma seleção de soluções para diferentes necessidades de manutenção e operação.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">DM</div><h3>Diesel Mate</h3><p>Solução voltada para sistemas e aplicações relacionadas ao diesel, com foco em desempenho e proteção.</p></div>
+      <div class="card"><div class="icon">PL</div><h3>Premalube</h3><p>Lubrificantes e graxas para aplicações industriais e condições exigentes de operação.</p></div>
+      <div class="card"><div class="icon">CF</div><h3>Certop FG</h3><p>Soluções para lubrificação em aplicações que exigem produtos adequados a ambientes específicos.</p></div>
+      <div class="card"><div class="icon">EN</div><h3>Enforce</h3><p>Produtos desenvolvidos para auxiliar na manutenção, limpeza e eficiência das operações.</p></div>
+      <div class="card"><div class="icon">SX</div><h3>Spectra Xtreme</h3><p>Soluções de alto desempenho para necessidades especiais de manutenção e proteção.</p></div>
+      <div class="card"><div class="icon">+</div><h3>Outras soluções</h3><p>Consulte nosso portfólio completo e encontre a solução mais adequada para sua aplicação.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container diesel">
+    <div>
+      <span class="tag">Destaque</span>
+      <h3>Diesel Mate</h3>
+      <p>Uma das soluções em destaque da Bemhes Representação. Fale conosco para conhecer a aplicação, benefícios e condições comerciais.</p>
+      <a class="btn btn-primary" href="https://wa.me/5543988428240?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Diesel%20Mate." target="_blank">Solicitar informações</a>
+    </div>
+    <div class="diesel-box">
+      <ul class="list">
+        <li>Atendimento personalizado</li>
+        <li>Orientação sobre aplicações</li>
+        <li>Soluções para manutenção e operação</li>
+        <li>Contato direto pelo WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="empresa">
+  <div class="container about-grid">
+    <div>
+      <span class="tag">Quem somos</span>
+      <h2 style="font-size:38px;color:var(--azul);margin-bottom:15px">Bemhes Representação</h2>
+      <p style="color:var(--cinza);font-size:17px">Atuamos na representação comercial de produtos e soluções para empresas que buscam melhorar seus processos de manutenção, lubrificação e desempenho. Nosso trabalho é aproximar boas soluções das necessidades reais de cada cliente.</p>
+    </div>
+    <div class="mission" id="missao">
+      <h3>Missão</h3>
+      <p>Oferecer soluções de qualidade, com atendimento próximo e orientação adequada, contribuindo para a eficiência, produtividade e segurança das operações de nossos clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+    <div class="section-head">
+      <h2>Entre em contato</h2>
+      <p>Estamos prontos para atender sua empresa.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>WhatsApp / Telefone</h3>
+        <a class="contact-link" href="https://wa.me/5543988428240" target="_blank">(43) 98842-8240</a>
+      </div>
+      <div class="contact-card">
+        <h3>E-mail</h3>
+        <a class="contact-link" href="mailto:bemhesrepresentacao@gmail.com">bemhesrepresentacao@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="localizacao" class="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>Localização</h2>
+      <p>Atendimento em Mandaguari – Paraná e região.</p>
+    </div>
+    <iframe class="map" src="https://www.google.com/maps?q=Mandaguari%2C%20PR%2C%20Brasil&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/5543988428240?text=Olá!%20Vim%20pelo%20site%20da%20Bemhes%20Representação." target="_blank">WhatsApp</a>
+
+<footer>
+  <div class="container footer-flex">
+    <strong>Bemhes Representação</strong>
+    <small>© 2026 Bemhes Representação. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+</body>
+</html>
