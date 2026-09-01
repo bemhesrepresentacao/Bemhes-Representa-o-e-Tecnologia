@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bemhes Representação</title>
+    <title>Bemhes Representação | Soluções que movem seu negócio!</title>
     <style>
         :root {
-            --navy-blue: #0A326F;
-            --dark-blue: #061F47;
-            --green-accent: #68B623;
-            --whatsapp-green: #25D366;
-            --light-bg: #F5F7FA;
-            --card-bg: #FFFFFF;
-            --text-main: #333333;
-            --text-subtle: #666666;
+            --bg-dark: #070A0F;
+            --card-bg: #0F172A;
+            --blue-accent: #0052D4;
+            --green-accent: #22C55E;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
         }
 
         * {
@@ -21,62 +19,48 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--text-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             line-height: 1.6;
         }
 
         /* Header / Navbar */
         header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
+            background-color: rgba(7, 10, 15, 0.95);
+            padding: 0.8rem 8%;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            border-bottom: 2px solid var(--blue-accent);
+            backdrop-filter: blur(5px);
         }
 
-        .brand-logo {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
         }
 
-        .logo-marca {
-    width: 180px;
-    height: auto;
-}
-
-        .brand-name {
-            font-weight: 600;
-            color: var(--navy-blue);
-            font-size: 18px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
+        .logo-img {
+            height: 55px; /* Ajuste a altura conforme necessário */
+            width: auto;
+            object-fit: contain;
         }
 
         nav a {
+            color: var(--text-light);
             text-decoration: none;
-            color: var(--navy-blue);
+            margin-left: 2rem;
             font-weight: 600;
-            font-size: 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
             transition: color 0.3s;
         }
 
@@ -84,453 +68,267 @@
             color: var(--green-accent);
         }
 
-        .btn-header {
-            background-color: var(--green-accent);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s;
-        }
-
-        .btn-header:hover {
-            opacity: 0.9;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
         /* Hero Section */
         .hero {
+            background: linear-gradient(rgba(7, 10, 15, 0.85), rgba(7, 10, 15, 0.85)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1350&q=80') center/cover;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 40px 0;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .badge {
-            background-color: #E8F5E9;
-            color: var(--green-accent);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            color: var(--navy-blue);
-            line-height: 1.15;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero-text p {
-            color: var(--text-subtle);
-            font-size: 16px;
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-primary {
-            background-color: var(--green-accent);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .btn-secondary {
-            border: 1.5px solid var(--navy-blue);
-            color: var(--navy-blue);
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .hero-image-box {
-            flex: 1;
-            background-color: white;
-            border: 2px dashed #D0D5DD;
-            border-radius: 16px;
-            padding: 50px 30px;
+            justify-content: center;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            padding: 8rem 1rem 4rem;
         }
 
-        .hero-image-box h3 {
-            color: var(--navy-blue);
-            margin-bottom: 10px;
-            font-size: 20px;
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #1E90FF, var(--green-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-image-box p {
-            color: var(--text-subtle);
-            font-size: 13px;
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
-        /* Section Titles */
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-header h2 {
-            font-size: 32px;
-            color: var(--navy-blue);
-            font-weight: 700;
-        }
-
-        .section-header p {
-            color: var(--text-subtle);
-            margin-top: 8px;
-        }
-
-        /* Products Section */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .product-tag {
-            background-color: #E8F5E9;
-            color: var(--green-accent);
+        .btn {
+            background: linear-gradient(90deg, var(--blue-accent), var(--green-accent));
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
         }
 
-        .product-card h3 {
-            color: var(--navy-blue);
-            font-size: 20px;
-            margin-bottom: 10px;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
         }
 
-        .product-card p {
-            color: var(--text-subtle);
-            font-size: 14px;
+        /* Seções */
+        section {
+            padding: 5rem 8%;
         }
 
-        /* Empresa & Missao */
-        .empresa-grid {
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--green-accent);
+            display: block;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .grid-3 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .mission-card {
-            background-color: white;
-            border-left: 4px solid var(--green-accent);
-            padding: 30px;
-            border-radius: 0 16px 16px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #1E293B;
+            border-top: 4px solid var(--blue-accent);
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .mission-card h3 {
-            color: var(--navy-blue);
-            font-size: 22px;
-            margin-bottom: 15px;
+        .card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--green-accent);
         }
 
-        /* Destaque Banner */
-        .destaque-banner {
-            background-color: var(--dark-blue);
-            border-radius: 16px;
-            padding: 50px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 60px 0;
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #38BDF8;
         }
 
-        .destaque-left {
-            max-width: 50%;
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .destaque-left .badge {
-            background-color: #E8F5E9;
-            color: var(--green-accent);
-        }
-
-        .destaque-left h2 {
-            font-size: 32px;
-            margin: 15px 0;
-        }
-
-        .destaque-left p {
-            color: #D0D5DD;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .destaque-right {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            width: 45%;
-        }
-
-        .destaque-right ul {
-            list-style: none;
-        }
-
-        .destaque-right li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .destaque-right li::before {
-            content: "✓";
-            color: var(--green-accent);
-            font-weight: bold;
-        }
-
-        /* Contact Section */
-        .contact-cards {
+        /* Projetos */
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .contact-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        .portfolio-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #1E293B;
         }
 
-        .contact-card h4 {
-            color: var(--navy-blue);
-            margin-bottom: 10px;
+        .portfolio-item h4 {
+            color: var(--green-accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-card p {
-            font-weight: bold;
-            color: var(--navy-blue);
+        .portfolio-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
         }
 
-        /* Location Section */
-        .map-box {
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            height: 350px;
-            width: 100%;
+        .tag {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green-accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
         }
 
-        .map-box iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+        /* Contato & Rodapé */
+        .contact-section {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0F172A 100%);
+            text-align: center;
+            border-top: 1px solid #1E293B;
         }
 
-        /* Footer */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            color: var(--text-muted);
+        }
+
         footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 20px 0;
+            background-color: #030508;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #1E293B;
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            font-size: 13px;
-        }
-
-        .btn-whatsapp-footer {
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero, .empresa-grid, .destaque-banner, .contact-cards {
-                flex-direction: column;
-                grid-template-columns: 1fr;
-            }
-            .destaque-left, .destaque-right {
-                max-width: 100%;
-                width: 100%;
-            }
-            nav ul {
-                display: none;
-            }
+            header { flex-direction: column; padding: 1rem; }
+            nav { margin-top: 1rem; }
+            nav a { margin: 0 0.5rem; font-size: 0.8rem; }
+            .hero-content h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="nav-container">
-            <a href="#" class="brand-logo">
-               <img src="Logo Marca.png" alt="Logo da Bemhes" class="logo"></div>
-                <span class="brand-name">Bemhes Representação</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#empresa">Empresa</a></li>
-                    <li><a href="#missao">Missão</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="#localizacao">Localização</a></li>
-                </ul>
-            </nav>
-            <a href="#contato" class="btn-header">Fale conosco</a>
+        <div class="logo-container">
+            <img src="Logo Marca.jpg" alt="Bemhes Representação" class="logo-img">
         </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#atuacao">Atuação</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
-    <main class="container">
-        <section id="inicio" class="hero">
-            <div class="hero-text">
-                <span class="badge">Soluções para sua empresa</span>
-                <h1>Produtos que ajudam sua operação a render mais.</h1>
-                <p>Conheça nosso portfólio de soluções para manutenção, lubrificação e desempenho industrial. Atendimento próximo, orientação técnica e foco nas necessidades de cada cliente.</p>
-                <div class="hero-buttons">
-                    <a href="#produtos" class="btn-primary">Conhecer produtos</a>
-                    <a href="https://wa.me/5543988428240" target="_blank" class="btn-secondary">WhatsApp</a>
-                </div>
-            </div>
-            <div class="hero-image-box">
-                <h3>BEMHES REPRESENTAÇÃO</h3>
-                <p>Coloque sua logomarca aqui<br>Substitua este espaço pela imagem oficial da sua marca.</p>
-            </div>
-        </section>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Especialista em Soluções Industriais e Operacionais</h1>
+            <p>Soluções que movem seu negócio! Lubrificação de alta performance, químicos industriais e desenvolvimento sustentável.</p>
+            <a href="https://wa.me/5543988428240" target="_blank" class="btn">Falar no WhatsApp</a>
+        </div>
+    </section>
 
-        <section id="produtos" style="padding-top: 60px;">
-            <div class="section-header">
-                <h2>Nossos produtos</h2>
-                <p>Uma seleção de soluções para diferentes necessidades de manutenção e operação.</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <span class="product-tag">DM</span>
-                    <h3>Diesel Mate</h3>
-                    <p>Solução voltada para sistemas e aplicações relacionadas ao diesel, com foco em desempenho e proteção.</p>
-                </div>
-                <div class="product-card">
-                    <span class="product-tag">PL</span>
-                    <h3>Premalube</h3>
-                    <p>Lubrificantes e graxas para aplicações industriais e condições exigentes de operação.</p>
-                </div>
-                <div class="product-card">
-                    <span class="product-tag">CF</span>
-                    <h3>Certop FG</h3>
-                    <p>Soluções para lubrificação em aplicações que exigem produtos adequados a ambientes específicos.</p>
-                </div>
-            </div>
-        </section>
+    <section id="sobre">
+        <h2 class="section-title">Sobre a Bemhes</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-muted);">
+            <p>A <strong>Bemhes Representação</strong> atua com foco em parceria, confiança e resultados no segmento industrial e agrícola em Mandaguari-PR e região. Oferecemos suporte técnico especializado, recomendação de insumos de alta tecnologia e soluções focadas na longevidade e eficiência do seu maquinário.</p>
+        </div>
+    </section>
 
-        <section id="empresa" style="padding-top: 80px;">
-            <div class="empresa-grid">
+    <section id="atuacao" style="background: #0B1120;">
+        <h2 class="section-title">Áreas de Atuação</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Lubrificantes</h3>
+                <p>Óleos e graxas de alta performance projetados para resistir a condições extremas de carga, temperatura e trabalho contínuo em frotas e indústrias.</p>
+            </div>
+            <div class="card">
+                <h3>Químicos Industriais</h3>
+                <p>Produtos especializados para manutenção, desengraxe, proteção anticorrosiva e otimização dos processos de produção fabril.</p>
+            </div>
+            <div class="card">
+                <h3>Soluções Sustentáveis</h3>
+                <p>Tecnologias focadas na redução de resíduos, economia de insumos e eficiência energética para operações ambientalmente responsáveis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <h2 class="section-title">Projetos & Soluções</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h4>Catálogo Técnico Digital</h4>
+                <p>Estruturação de portfólio completo de lubrificantes e químicos para rápida consulta e atendimento a clientes industriais.</p>
                 <div>
-                    <span class="badge">Quem somos</span>
-                    <h2 style="color: var(--navy-blue); font-size: 32px; margin-bottom: 15px;">Bemhes Representação</h2>
-                    <p style="color: var(--text-subtle);">Atuamos na representação comercial de produtos e soluções para empresas que buscam melhorar seus processos de manutenção, lubrificação e desempenho. Nosso trabalho é aproximar boas soluções das necessidades reais de cada cliente.</p>
-                </div>
-                <div id="missao" class="mission-card">
-                    <h3>Missão</h3>
-                    <p style="color: var(--text-subtle);">Oferecer soluções de qualidade, com atendimento próximo e orientação adequada, contribuindo para a eficiência, produtividade e segurança das operações de nossos clientes.</p>
+                    <span class="tag">Atendimento</span>
+                    <span class="tag">Produtos</span>
                 </div>
             </div>
-        </section>
+            <div class="portfolio-item">
+                <h4>Planos de Manutenção no Campo</h4>
+                <p>Mapeamento e recomendação de produtos para maquinário pesado, tratores e semeadoras para prevenir paradas na safra.</p>
+                <div>
+                    <span class="tag">Agronegócio</span>
+                    <span class="tag">Manutenção</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <h4>Consultoria de Eficiência</h4>
+                <p>Acompanhamento direto nas instalações do cliente para redução de custos com desgaste de componentes mecânicos.</p>
+                <div>
+                    <span class="tag">Parceria</span>
+                    <span class="tag">Resultados</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="destaque-banner">
-            <div class="destaque-left">
-                <span class="badge">Destaque</span>
-                <h2>Diesel Mate</h2>
-                <p>Uma das soluções em destaque da Bemhes Representação. Fale conosco para conhecer a aplicação, benefícios e condições comerciais.</p>
-                <a href="https://wa.me/5543988428240" target="_blank" class="btn-primary">Solicitar informações</a>
-            </div>
-            <div class="destaque-right">
-                <ul>
-                    <li>Atendimento personalizado</li>
-                    <li>Orientação sobre aplicações</li>
-                    <li>Soluções para manutenção e operação</li>
-                    <li>Contato direto pelo WhatsApp</li>
-                </ul>
-            </div>
-        </section>
+    <section id="contato" class="contact-section">
+        <h2>Entre em Contato</h2>
+        <p>Atendimento para Mandaguari – PR e Região</p>
+        
+        <div class="contact-info">
+            <p><strong>WhatsApp:</strong> (43) 98842-8240</p>
+            <p><strong>E-mail:</strong> bemhesrepresentacao@gmail.com</p>
+            <p><strong>Localização:</strong> Mandaguari – PR e região</p>
+        </div>
 
-        <section id="contato">
-            <div class="section-header">
-                <h2>Entre em contato</h2>
-                <p>Estamos prontos para atender sua empresa.</p>
-            </div>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <h4>WhatsApp / Telefone</h4>
-                    <p>(43) 98842-8240</p>
-                </div>
-                <div class="contact-card">
-                    <h4>E-mail</h4>
-                    <p>bemhesrepresentacao@gmail.com</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="localizacao" style="padding-top: 60px;">
-            <div class="section-header">
-                <h2>Localização</h2>
-                <p>Atendimento em Mandaguari – Paraná e região.</p>
-            </div>
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58548.814582883925!2d-51.70566455!3d-23.5352189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ECD22C1A6E1E4F%3A0x6D43B06169992078!2sMandaguari%2C%20PR%2C%2086975-000!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
-    </main>
+        <a href="https://wa.me/5543988428240" target="_blank" class="btn">Solicitar Atendimento</a>
+    </section>
 
     <footer>
-        <div class="footer-container">
-            <a href="https://wa.me/5543988428240" target="_blank" class="btn-whatsapp-footer">WhatsApp</a>
-            <span>Bemhes Representação</span>
-            <span>&copy; 2026 Bemhes Representação. Todos os direitos reservados.</span>
-        </div>
+        <p>&copy; 2026 Bemhes Representação. Parceria • Confiança • Resultados.</p>
     </footer>
 
 </body>
