@@ -48,7 +48,7 @@
         }
 
         .logo-img {
-            height: 55px; /* Ajuste a altura conforme necessário */
+            height: 55px;
             width: auto;
             object-fit: contain;
         }
@@ -167,7 +167,7 @@
             font-size: 0.95rem;
         }
 
-        /* Projetos */
+        /* Produtos / Portfolio */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -179,6 +179,9 @@
             border-radius: 8px;
             padding: 1.5rem;
             border: 1px solid #1E293B;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .portfolio-item h4 {
@@ -193,14 +196,108 @@
             margin-bottom: 1rem;
         }
 
-        .tag {
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .tag-btn {
             display: inline-block;
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--green-accent);
-            padding: 0.2rem 0.6rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .tag-cotacao {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--green-accent);
+            border: 1px solid var(--green-accent);
+        }
+
+        .tag-cotacao:hover {
+            background: var(--green-accent);
+            color: #fff;
+        }
+
+        .tag-detalhes {
+            background: rgba(0, 82, 212, 0.2);
+            color: #38BDF8;
+            border: 1px solid var(--blue-accent);
+        }
+
+        .tag-detalhes:hover {
+            background: var(--blue-accent);
+            color: #fff;
+        }
+
+        /* Modal de Detalhes */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--blue-accent);
+            border-radius: 10px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            color: var(--text-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #fff;
+        }
+
+        .modal-body h3 {
+            color: var(--green-accent);
+            margin-bottom: 1rem;
+        }
+
+        .modal-body h4 {
+            color: #38BDF8;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .modal-body ul {
+            margin-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.4rem;
         }
 
         /* Contato & Rodapé */
@@ -241,7 +338,7 @@
     <header>
         <div class="logo-container">
             <img src="Logo Marca.png" alt="Bemhes Representação" class="logo-img">
-        </div>"Bemhes Representação | Soluções que movem seu negócio!"</a>
+        </div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
@@ -262,12 +359,11 @@
     <section id="sobre">
         <h2 class="section-title">Sobre a Bemhes</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-muted);">
-            <p>A <strong>Bemhes Representação</strong> ## Sobre a Bemhes atua no segmento industrial e agrícola em <strong>Mandaguari-PR e região</strong>, oferecendo soluções em <strong>lubrificação de alta performance, proteção e manutenção de máquinas e equipamentos</strong>.
-            <p>Nosso trabalho vai além da comercialização de produtos: buscamos <strong>entender a necessidade de cada operação e recomendar a solução mais adequada</strong>, contribuindo para aumentar a vida útil dos componentes, reduzir desgastes, falhas e paradas não programadas.
-            <p>Trabalhamos com <strng>tecnologias de alto desempenho e excelente custo-benefício</strng>, buscando proporcionar <strong>maior proteção, eficiência operacional e redução dos custos de manutenção</strong>.
-            <p>Nosso compromisso é transformar lubrificação em resultado: mais proteção para o seu equipamento, maior produtividade e economia para o seu negócio.
-            <p> <strong>Bemhes Representação</strong> — Tecnologia em lubrificação, proteção e performance para o seu negócio.
-</p>
+            <p>A <strong>Bemhes Representação</strong> atua no segmento industrial e agrícola em <strong>Mandaguari-PR e região</strong>, oferecendo soluções em <strong>lubrificação de alta performance, proteção e manutenção de máquinas e equipamentos</strong>.</p>
+            <p>Nosso trabalho vai além da comercialização de produtos: buscamos <strong>entender a necessidade de cada operação e recomendar a solução mais adequada</strong>, contribuindo para aumentar a vida útil dos componentes, reduzir desgastes, falhas e paradas não programadas.</p>
+            <p>Trabalhamos com <strong>tecnologias de alto desempenho e excelente custo-benefício</strong>, buscando proporcionar <strong>maior proteção, eficiência operacional e redução dos custos de manutenção</strong>.</p>
+            <p>Nosso compromisso é transformar lubrificação em resultado: mais proteção para o seu equipamento, maior produtividade e economia para o seu negócio.</p>
+            <p><strong>Bemhes Representação</strong> — Tecnologia em lubrificação, proteção e performance para o seu negócio.</p>
         </div>
     </section>
 
@@ -292,32 +388,124 @@
     <section id="projetos">
         <h2 class="section-title">Produtos</h2>
         <div class="portfolio-grid">
+            <!-- Produto 1: Premalube -->
             <div class="portfolio-item">
-                <h4>Premalube</h4>
-                <p>O Premalube é uma graxa multipropósito de alta performance fabricada pela NCH, formulada com espessante de complexo de alumínio e óleo base de grau premium. Foi desenvolvida para suportar cargas pesadas, extrema pressão, partículas abrasivas e elevadas temperaturas..</p>
                 <div>
-                    <span class="tag">Cotação</span>
-                    <span class="tag">Detalhes</span>
+                    <h4>Premalube</h4>
+                    <p>O Premalube é uma graxa multipropósito de alta performance fabricada pela NCH, formulada com espessante de complexo de alumínio e óleo base de grau premium. Foi desenvolvida para suportar cargas pesadas, extrema pressão, partículas abrasivas e elevadas temperaturas.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://wa.me/5543988428240?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20do%20produto%20Premalube." target="_blank" class="tag-btn tag-cotacao">Cotação</a>
+                    <button onclick="openModal('modal-premalube')" class="tag-btn tag-detalhes">Detalhes</button>
                 </div>
             </div>
+
+            <!-- Produto 2: Diesel Mate -->
             <div class="portfolio-item">
-                <h4>Diesel Mate</h4>
-                <p>O Diesel Mate é um aditivo completo desenvolvido pela NCH para otimizar o desempenho do diesel, sendo eficiente em combustível de ultrabaixo teor de enxofre e biodiesel.</p>
                 <div>
-                    <span class="tag">Cotação</span>
-                    <span class="tag">Detalhes</span>
+                    <h4>Diesel Mate</h4>
+                    <p>O Diesel Mate é um aditivo completo desenvolvido pela NCH para otimizar o desempenho do diesel, sendo eficiente em combustível de ultrabaixo teor de enxofre e biodiesel.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://wa.me/5543988428240?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20do%20produto%20Diesel%20Mate." target="_blank" class="tag-btn tag-cotacao">Cotação</a>
+                    <button onclick="openModal('modal-dieselmate')" class="tag-btn tag-detalhes">Detalhes</button>
                 </div>
             </div>
+
+            <!-- Produto 3: Certop -->
             <div class="portfolio-item">
-                <h4>Certop</h4>
-                <p>O Certop é um óleo multiviscoso de alto desempenho formulado com óleo base refinado e aditivos especiais para lubrificação de engrenagens em equipamentos pesados sob condições severas.</p>
                 <div>
-                    <span class="tag">Cotação</span>
-                    <span class="tag">Detalhes</span>
+                    <h4>Certop (80W90 / 85W140) & Certop Industrial</h4>
+                    <p>Óleos de alto desempenho para engrenagens e rolamentos formulados com óleo base refinado e aditivos especiais para aplicações severas em equipamentos pesados e indústrias.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://wa.me/5543988428240?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20da%20linha%20de%20%C3%93leos%20Certop." target="_blank" class="tag-btn tag-cotacao">Cotação</a>
+                    <button onclick="openModal('modal-certop')" class="tag-btn tag-detalhes">Detalhes</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Premalube -->
+    <div id="modal-premalube" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-premalube')">&times;</span>
+            <div class="modal-body">
+                <h3>Premalube - Graxa Multipropósito EP</h3>
+                <p>Graxa de complexo de alumínio de alta performance para cargas pesadas, extrema pressão e elevadas temperaturas (NLGI 2, 1, 0, 00).</p>
+                
+                <h4>Aplicações e Restrições:</h4>
+                <ul>
+                    <li><strong>Ideal para:</strong> Equipamentos de construção, mineração, agricultura, siderúrgicas e indústria geral (rolamentos, mancais, juntas universais e engrenagens).</li>
+                    <li><strong>Contraindicações:</strong> Não utilizar em rolamentos acima de 4.500 RPM ou em temperaturas superiores a 260 °C.</li>
+                </ul>
+
+                <h4>Principais Aditivos e Benefícios:</h4>
+                <ul>
+                    <li><strong>Complexo de Alumínio:</strong> Reversão ao calor e alta resistência à lavagem por água.</li>
+                    <li><strong>Bissulfeto de Molibdênio e Grafite:</strong> Proteção antidesgaste superior em ambientes abrasivos com terra e poeira.</li>
+                    <li><strong>Polímeros Adesivos:</strong> Fixam a graxa no ponto de aplicação evitando escorrimentos.</li>
+                    <li><strong>Proteção Química:</strong> Inibidores de corrosão, ferrugem e agentes de extrema pressão (EP).</li>
+                </ul>
+
+                <h4>Especificações Técnicas:</h4>
+                <ul>
+                    <li><strong>Temperatura de trabalho:</strong> Até 135 °C (contínuos) e 204 °C (intermitentes).</li>
+                    <li><strong>Atende especificações:</strong> Caterpillar MPG, Case 251H EP, Ford M1693A, MIL-G-23549C, siderúrgicas americanas (Req. 340, 350, 352, etc.).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Diesel Mate -->
+    <div id="modal-dieselmate" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-dieselmate')">&times;</span>
+            <div class="modal-body">
+                <h3>Diesel Mate - Aditivo para Diesel</h3>
+                <p>Aditivo completo para otimização de combustível, compatível com diesel S10, S500 e biodiesel.</p>
+                
+                <h4>Benefícios Comprovados:</h4>
+                <ul>
+                    <li><strong>Aumento de Rendimento:</strong> Melhora a eficiência operacional em até 10%.</li>
+                    <li><strong>Ganho de Cetano:</strong> Aumenta o índice em até 10% (elevação média de 3 a 4 pontos), facilitando a ignição.</li>
+                    <li><strong>Redução de Emissões:</strong> Reduz a fumaça preta e gases poluentes em média de 20%.</li>
+                    <li><strong>Proteção de Injetores:</strong> Lubrifica bombas e bicos contra o desgaste provocado pelo diesel de ultrabaixo teor de enxofre. Cumpre o teste Cummins L-10.</li>
+                </ul>
+
+                <h4>Ações dos Componentes:</h4>
+                <ul>
+                    <li><strong>Desemulsificante:</strong> Separa a água acumulada para drenagem, evitando entupimento de filtros.</li>
+                    <li><strong>Desativador de Metais:</strong> Inibe o cobre e metais pesados de oxidarem o combustível.</li>
+                    <li><strong>Melhorador de Fluxo a Frio:</strong> Evita a gelificação do combustível em baixas temperaturas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Certop -->
+    <div id="modal-certop" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-certop')">&times;</span>
+            <div class="modal-body">
+                <h3>Linha Certop - Óleos para Engrenagens e Rolamentos</h3>
+                <p>Óleos de alta performance desenvolvidos para durar até 4 vezes mais que os lubrificantes convencionais.</p>
+
+                <h4>Certop Automotivo / Pesado (80W90 e 85W140):</h4>
+                <ul>
+                    <li><strong>Aplicações:</strong> Diferenciais, transmissões manuais, eixos e caixas de engrenagens (API GL-3, GL-4, GL-5, SAE J2360, Mack GO-J, ZF TE-ML).</li>
+                    <li><strong>Diferenciais:</strong> Condicionadores de selos (evitam vazamentos), agentes adesivos (eliminam desgaste por partida a seco) e alta tolerância térmica (até 160 °C).</li>
+                </ul>
+
+                <h4>Certop Industrial (ISO 68 ao 680):</h4>
+                <ul>
+                    <li><strong>Aplicações:</strong> Caixas de engrenagens industriais (dentes retos, helicoidais, sem-fim) e rolamentos industriais sob condições extremas.</li>
+                    <li><strong>Especificações:</strong> Atende DIN 51517 CLP, AGMA 2EP a 8EP, US Steel 224, David Brown.</li>
+                    <li><strong>Restrição:</strong> Não utilizar em engrenagens de bronze ou cobre.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <section id="contato" class="contact-section">
         <h2>Entre em Contato</h2>
@@ -335,6 +523,23 @@
     <footer>
         <p>&copy; 2026 Bemhes Representação. Parceria • Confiança • Resultados.</p>
     </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Fechar modal ao clicar fora da caixa do conteúdo
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
